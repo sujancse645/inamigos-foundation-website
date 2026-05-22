@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+}
+
+/*
+  The default theme is Light (White / Emerald).
+  The dark theme is Navy / Cyan.
+*/
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --primary: #10b981; /* Emerald */
+  --secondary: #0ea5e9; /* Light Cyan/Sky */
+  --accent: #f59e0b; /* Amber */
+  --card: rgba(255, 255, 255, 0.7);
+  --card-foreground: #0f172a;
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --background: #071120; /* Deep Navy */
+  --foreground: #f8fafc;
+  --primary: #06b6d4; /* Cyan */
+  --secondary: #10b981; /* Emerald */
+  --accent: #f59e0b;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-foreground: #f8fafc;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium UI Utilities */
+@layer utilities {
+  .glass {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px var(--primary);
+  }
+
+  .text-glow-secondary {
+    text-shadow: 0 0 20px var(--secondary);
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
