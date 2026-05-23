@@ -70,7 +70,7 @@ export default function Gallery() {
                 key={img.id}
               >
                 <GlassCard glowColor="primary" className="p-2 overflow-hidden group cursor-pointer h-[300px] flex flex-col justify-end relative">
-                  <Image src={img.src} alt={img.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700 -z-10" />
+                  <Image src={img.src} alt={img.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-700 -z-10" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
                   
                   <div className="relative z-10 translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 p-4">

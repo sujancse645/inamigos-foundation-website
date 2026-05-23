@@ -108,7 +108,7 @@ export default function Home() {
               >
                 <GlassCard glowColor={project.color} className="h-full flex flex-col group cursor-pointer p-6">
                   <div className="w-full h-48 bg-foreground/5 rounded-xl mb-6 overflow-hidden relative">
-                    <Image src={project.image} alt={project.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <Image src={project.image} alt={project.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <h3 className="text-xl font-bold font-heading mb-3 group-hover:text-primary transition-colors">{project.name}</h3>
                   <p className="text-foreground/70 mb-6 flex-1">

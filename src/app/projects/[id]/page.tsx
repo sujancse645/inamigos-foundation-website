@@ -42,6 +42,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
               src={project.image} 
               alt={project.name} 
               fill 
+              sizes="100vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
