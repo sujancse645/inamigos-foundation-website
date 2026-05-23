@@ -56,11 +56,12 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-heading font-semibold text-lg text-foreground">Our Projects</h4>
             <ul className="space-y-2 text-sm text-foreground/70">
-              <li><Link href="/projects#vikas" className="hover:text-primary transition-colors">Project VIKAS</Link></li>
-              <li><Link href="/projects#prakriti" className="hover:text-primary transition-colors">Project PRAKRITI</Link></li>
-              <li><Link href="/projects#seva" className="hover:text-primary transition-colors">Project SEVA</Link></li>
-              <li><Link href="/projects#udaan" className="hover:text-primary transition-colors">Project UDAAN</Link></li>
-              <li><Link href="/projects#jeev" className="hover:text-primary transition-colors">Project JEEV</Link></li>
+              <li><Link href="/projects/vikas" className="hover:text-primary transition-colors">Project VIKAS</Link></li>
+              <li><Link href="/projects/prakriti" className="hover:text-primary transition-colors">Project PRAKRITI</Link></li>
+              <li><Link href="/projects/seva" className="hover:text-primary transition-colors">Project SEVA</Link></li>
+              <li><Link href="/projects/udaan" className="hover:text-primary transition-colors">Project UDAAN</Link></li>
+              <li><Link href="/projects/jeev" className="hover:text-primary transition-colors">Project JEEV</Link></li>
+              <li><Link href="/projects/bachpanshala" className="hover:text-primary transition-colors">Project BACHPANSHALA</Link></li>
             </ul>
           </div>
 
@@ -70,15 +71,15 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-foreground/70">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>New Delhi, India<br/>Registered under Section 8, 80G & 12A.</span>
+                <span>Ward No. 5, Gram Post,<br/>Sipat Ujwal Nagar, Bilaspur. Chhattisgarh<br/>Pin-Code: 495555</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 626 730 9902</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                <a href="mailto:info@inamigosfoundation.org.in" className="hover:text-primary transition-colors">info@inamigosfoundation.org.in</a>
+                <a href="mailto:inamigosfoundation@gmail.com" className="hover:text-primary transition-colors">inamigosfoundation@gmail.com</a>
               </li>
             </ul>
           </div>

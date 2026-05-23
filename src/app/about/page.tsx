@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Award, ShieldCheck, Target, Heart } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
   const certifications = [
@@ -51,7 +52,7 @@ export default function About() {
             viewport={{ once: true }}
             className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group"
           >
-            <img src="/images/about/about-us.jpg" alt="About InAmigos" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" />
+            <Image src="https://inamigosfoundation.org.in/public/storage/settings/1738236437.jpg" alt="About InAmigos" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end p-6">
               <div>
                 <h3 className="text-xl font-bold font-heading text-white">Govind Shukla</h3>

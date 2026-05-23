@@ -5,6 +5,8 @@ import { ArrowRight, Users, TreePine, GraduationCap, HeartHandshake } from "luci
 import { AnimatedButton } from "@/components/ui/animated-button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Particles } from "@/components/ui/particles";
+import { projects } from "@/data/projects";
+import Image from "next/image";
 
 const stats = [
   { icon: Users, label: "Lives Impacted", value: "50,000+" },
@@ -95,26 +97,22 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { name: "Project VIKAS", slug: "vikas", img: "/images/hero/bachpansala.jpg", desc: "Enhancing employability through skill development programs." },
-              { name: "Project PRAKRITI", slug: "prakriti", img: "/images/hero/prakriti.jpg", desc: "Environmental conservation and sustainability efforts." },
-              { name: "Project SEVA", slug: "seva", img: "/images/hero/sewa.jpg", desc: "Providing food and clothing to the underprivileged." }
-            ].map((project, idx) => (
+            {projects.slice(0, 3).map((project, idx) => (
               <motion.div
-                key={project.name}
+                key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                onClick={() => window.location.href = `/projects/${project.slug}`}
+                onClick={() => window.location.href = `/projects/${project.id}`}
               >
-                <GlassCard glowColor="primary" className="h-full flex flex-col group cursor-pointer p-6">
+                <GlassCard glowColor={project.color} className="h-full flex flex-col group cursor-pointer p-6">
                   <div className="w-full h-48 bg-foreground/5 rounded-xl mb-6 overflow-hidden relative">
-                    <img src={project.img} alt={project.name} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
+                    <Image src={project.image} alt={project.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <h3 className="text-xl font-bold font-heading mb-3 group-hover:text-primary transition-colors">{project.name}</h3>
                   <p className="text-foreground/70 mb-6 flex-1">
-                    {project.desc}
+                    {project.description}
                   </p>
                   <div className="flex items-center text-primary font-medium text-sm group-hover:underline">
                     Learn More <ArrowRight className="ml-2 w-4 h-4" />

@@ -3,36 +3,25 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GlassCard } from "@/components/ui/glass-card";
+import Image from "next/image";
 
-const categories = ["All", "Plantation", "Education", "Welfare", "Animal Welfare", "Events"];
+const categories = ["All", "Education", "Welfare", "Animal Welfare", "Events"];
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const images = [
-    { id: 1, category: "Animal Welfare", title: "Street Dog Feeding", src: "/images/gallery/gallery-1.jpg" },
-    { id: 2, category: "Welfare", title: "Blanket Distribution Night", src: "/images/gallery/gallery-2.jpg" },
-    { id: 3, category: "Welfare", title: "Blanket Distribution Slum", src: "/images/gallery/gallery-3.jpg" },
-    { id: 4, category: "Welfare", title: "Ration Kit Drive", src: "/images/gallery/gallery-4.jpg" },
-    { id: 5, category: "Welfare", title: "Hospital Food Distribution", src: "/images/gallery/gallery-5.jpg" },
-    { id: 6, category: "Welfare", title: "Elderly Support", src: "/images/gallery/gallery-6.jpg" },
-    { id: 7, category: "Welfare", title: "Street Distribution", src: "/images/gallery/gallery-7.jpg" },
-    { id: 8, category: "Welfare", title: "Ration Kit Drive", src: "/images/gallery/gallery-8.jpg" },
-    { id: 9, category: "Welfare", title: "Food Drive", src: "/images/gallery/gallery-9.jpg" },
-    { id: 10, category: "Plantation", title: "Sapling Preparation", src: "/images/gallery/gallery-10.jpg" },
-    { id: 11, category: "Education", title: "Slum Children Teaching", src: "/images/gallery/gallery-11.jpg" },
-    { id: 12, category: "Education", title: "Street Teaching", src: "/images/gallery/gallery-12.jpg" },
-    { id: 13, category: "Events", title: "Republic Day Celebration", src: "/images/gallery/gallery-13.jpg" },
-    { id: 14, category: "Events", title: "Flag Distribution", src: "/images/gallery/gallery-14.jpg" },
-    { id: 15, category: "Welfare", title: "Food Distribution", src: "/images/gallery/gallery-15.jpg" },
-    { id: 16, category: "Welfare", title: "Cloth Distribution", src: "/images/gallery/gallery-16.jpg" },
-    { id: 17, category: "Animal Welfare", title: "Feeding Stray Dogs", src: "/images/gallery/gallery-17.jpg" },
-    { id: 18, category: "Welfare", title: "Slum Distribution", src: "/images/gallery/gallery-18.jpg" },
-    { id: 19, category: "Animal Welfare", title: "Petting Pups", src: "/images/gallery/gallery-19.jpg" },
-    { id: 20, category: "Plantation", title: "Tree Planting", src: "/images/gallery/gallery-20.jpg" },
-    { id: 21, category: "Welfare", title: "Summer Drink Distribution", src: "/images/gallery/gallery-21.jpg" },
-    { id: 22, category: "Animal Welfare", title: "Feeding Street Dog", src: "/images/gallery/gallery-22.jpg" },
-    { id: 23, category: "Welfare", title: "Child Nutrition Support", src: "/images/gallery/gallery-23.jpg" }
+    { id: 1, category: "Education", title: "Project Bachpanshala", src: "https://inamigosfoundation.org.in/public/storage/slideshow/1738235951.jpg" },
+    { id: 2, category: "Welfare", title: "Project Sewa", src: "https://inamigosfoundation.org.in/public/storage/slideshow/1738236132.jpg" },
+    { id: 3, category: "Welfare", title: "Project Udaan", src: "https://inamigosfoundation.org.in/public/storage/slideshow/1738235638.jpg" },
+    { id: 4, category: "Animal Welfare", title: "Project Jeev", src: "https://inamigosfoundation.org.in/public/storage/slideshow/1738235697.jpg" },
+    { id: 5, category: "Events", title: "World Water Day", src: "https://inamigosfoundation.org.in/public/storage/events/1738238109.jpg" },
+    { id: 6, category: "Events", title: "International Day of Happiness", src: "https://inamigosfoundation.org.in/public/storage/events/1738135259.jpeg" },
+    { id: 7, category: "Events", title: "Women and Girls in Science", src: "https://inamigosfoundation.org.in/public/storage/events/1738134836.jpeg" },
+    { id: 8, category: "Welfare", title: "Community Welfare 1", src: "https://inamigosfoundation.org.in/public/storage/gallery/1743051485.jpg" },
+    { id: 9, category: "Welfare", title: "Community Welfare 2", src: "https://inamigosfoundation.org.in/public/storage/gallery/1743051466.jpg" },
+    { id: 10, category: "Welfare", title: "Community Welfare 3", src: "https://inamigosfoundation.org.in/public/storage/gallery/1743051449.jpg" },
+    { id: 11, category: "Education", title: "Community Welfare 4", src: "https://inamigosfoundation.org.in/public/storage/gallery/1743051438.jpg" }
   ];
 
   const filteredImages = activeCategory === "All" 
@@ -81,7 +70,7 @@ export default function Gallery() {
                 key={img.id}
               >
                 <GlassCard glowColor="primary" className="p-2 overflow-hidden group cursor-pointer h-[300px] flex flex-col justify-end relative">
-                  <img src={img.src} alt={img.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 -z-10" />
+                  <Image src={img.src} alt={img.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700 -z-10" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
                   
                   <div className="relative z-10 translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 p-4">
